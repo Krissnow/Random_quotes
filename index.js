@@ -4,6 +4,7 @@ import {
   showFavoriteCard,
   hideFavoriteCard,
 } from "./src/favoritesHandler.js";
+import { generateRandomInt } from "./src/utils.js";
 
 const generateBtn = document.getElementById("generate-btn");
 const quoteElement = document.getElementById("quote");
@@ -14,12 +15,13 @@ const favoritesContainer = document.getElementById("favorites-container");
 let currentQuoteIndex;
 
 function generateQuote() {
-  currentQuoteIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[currentQuoteIndex];
-  quoteElement.textContent = `"${quote.text}"`;
-  quoteAuthorElement.textContent = `${quote.author}`;
+  const randomIndex = generateRandomInt(quotes.length);
+  const { text, author, isFavorite } = quotes[randomIndex];
+  currentQuoteIndex = randomIndex;
+  quoteElement.textContent = `"${text}"`;
+  quoteAuthorElement.textContent = `${author}`;
 
-  toggleFavoriteIcon(quote.isFavorite, toggleFavoriteBtn);
+  toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
 
   toggleFavoriteBtn.style.display = "inline-block";
 }
