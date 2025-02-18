@@ -15,14 +15,16 @@
   </head>
   <body>
     <div class="quote-container">
-      <div id="quote" class="quote">
-        "Нажмите кнопку, чтобы получить цитату!"
+      <div id="quote">
+        <p id="quote-text" class="quote">
+          "Нажмите кнопку, чтобы получить цитату!"
+        </p>
+        <p id="author" class="author">Автор</p>
+        <button id="generate-btn" class="btn btn-primary">
+          Сгенерировать цитату
+        </button>
+        <i id="quote-favorite-btn" class="fa fa-star star-icon"></i>
       </div>
-      <div class="author">
-        <span id="author"> Автор </span>
-      </div>
-      <button id="generate-btn" class="btn">Сгенерировать цитату</button>
-      <i id="favorite-btn" class="fa fa-star star-icon"></i>
     </div>
     <div class="favorites-container" id="favorites-container"></div>
 

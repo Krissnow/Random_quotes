@@ -1,10 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: 20px;
   background-color: #f3f4f6;
 }
 
@@ -33,18 +33,30 @@ body {
 }
 
 .btn {
-  background-color: #4f46e5;
-  color: #ffffff;
-  border: none;
   padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 10px;
 }
 
-.btn:hover {
+.btn-primary {
+  background-color: #4f46e5;
+}
+
+.btn-primary:hover {
   background-color: #4338ca;
+}
+.btn-danger {
+  background-color: transparent;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+}
+
+.btn-danger:hover {
+  background-color: red;
+  color: white;
 }
 
 .favorites-container {
@@ -54,6 +66,8 @@ body {
 }
 
 .favorite-card {
+  display: flex;
+  flex-direction: column;
   background-color: #f9f9f9;
   padding: 10px 20px;
   margin: 10px;
@@ -62,7 +76,12 @@ body {
   width: 25%;
 }
 
-.author {
+.favorite-card-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.favorite-card-author {
   font-style: italic;
 }
 
